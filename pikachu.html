@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Gen I - Pikachu</title>
+    <!-- Importing Montserrat for that bold, modern look -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- CSS STYLES --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      body {
+        background-color: #e0e0e0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Main Card Container */
+      .page-container {
+        width: 950px;
+        height: 600px;
+        background-color: white;
+        border-radius: 24px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+      }
+
+      /* Header / Navigation Overlay */
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 50px;
+        z-index: 10;
+      }
+
+      .logo {
+        width: 110px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+      }
+
+      .hamburger {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+      }
+
+      /* Split Panels */
+      .left-panel {
+        flex: 1.2;
+        background-color: #ffcb05; /* Primary Pikachu Yellow */
+        padding: 140px 60px 60px 80px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .right-panel {
+        flex: 1;
+        background-color: #f6ebd3; /* Beige/Off-white */
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Text Content */
+      .subtitle {
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 4px;
+        color: #333;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: 90px;
+        font-weight: 900;
+        line-height: 0.9;
+        margin-bottom: 30px;
+        color: #000;
+      }
+
+      .description {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #444;
+        max-width: 320px;
+        margin-bottom: 40px;
+      }
+
+      /* Pagination Line */
+      .pagination {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .pagination::before {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background-color: #333;
+      }
+
+      /* Pikachu Image Overlap */
+      .hero-img {
+        position: absolute;
+        width: 115%;
+        left: -20%; /* This creates the overlap into the yellow section */
+        z-index: 5;
+        filter: drop-shadow(20px 20px 30px rgba(0, 0, 0, 0.1));
+      }
+
+      /* Side Navigation Dots */
+      .side-nav {
+        position: absolute;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        background-color: #cbb995;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .dot.active {
+        background-color: #000;
+        transform: scale(1.3);
+      }
+
+      /* Subtle Pokeball background icon (Bottom Left) */
+      .pokeball-watermark {
+        position: absolute;
+        bottom: -60px;
+        left: 40px;
+        width: 220px;
+        height: 220px;
+        border: 18px solid rgba(0, 0, 0, 0.04);
+        border-radius: 50%;
+      }
+
+      .pokeball-watermark::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -18px;
+        width: 118%;
+        height: 18px;
+        background: rgba(0, 0, 0, 0.04);
+        transform: translateY(-50%);
+      }
+
+      .pokeball-watermark::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+        border: 15px solid rgba(0, 0, 0, 0.04);
+        background: #ffcb05; /* Matches yellow background */
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Overlay Navigation -->
+      <header>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+          alt="Pokemon"
+          class="logo"
+        />
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+
+      <!-- Left Content Section -->
+      <section class="left-panel">
+        <p class="subtitle">Pokemon Gen I</p>
+        <h1>Pikachu</h1>
+        <p class="description">
+          Pikachu is an Electric-type Pokémon introduced in Generation I.
+          Pikachu are small, chubby, and incredibly cute mouse-like Pokémon.
+          They are almost completely covered by yellow fur.
+        </p>
+        <div class="pagination">01 / 08</div>
+
+        <!-- Decorative Icon -->
+        <div class="pokeball-watermark"></div>
+      </section>
+
+      <!-- Right Visual Section -->
+      <section class="right-panel">
+        <!-- Reference to image_7415db.png content style -->
+        <img
+          src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+          alt="Pikachu"
+          class="hero-img"
+        />
+
+        <!-- Side dots -->
+        <div class="side-nav">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
